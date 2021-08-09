@@ -6,6 +6,7 @@ import Link from "next/link";
 import Date from "../components/date";
 
 export default function Home({allPostsData}) {
+
   return (
     <Layout home>
       <Head>
