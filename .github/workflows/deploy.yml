@@ -1,0 +1,22 @@
+name: Deploy Blog
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    - steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref:'main'
+
+    - name: Install and Build
+      run: |
+        npm i
+        npm run buildE
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: out
