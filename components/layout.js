@@ -28,7 +28,7 @@ export default function Layout({children, home=false}) {
           <>
             <Image
               priority
-              src="/images/135645420.jpg"
+              src="https://errer.me/blog/images/135645420.jpg"
               height={144}
               width={144}
               className={utilStyles.borderCircle}
@@ -41,7 +41,7 @@ export default function Layout({children, home=false}) {
                 <a>
                   <Image
                     priority
-                    src="/images/135645420.jpg"
+                    src="https://errer.me/blog/images/135645420.jpg"
                     width={108}
                     height={108}
                     className={utilStyles.borderCircle}
