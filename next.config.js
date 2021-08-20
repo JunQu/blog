@@ -5,7 +5,7 @@ const nextConfig = {
   basePath: '/blog',
   images: {
     loader: "imgix",
-    path:''
+    path: "/blog",
   }
 }
 

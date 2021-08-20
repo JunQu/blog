@@ -1,6 +1,5 @@
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
-import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -26,9 +25,8 @@ export default function Layout({children, home=false}) {
       <header className={styles.header}>
         {home?(
           <>
-            <Image
-              priority
-              src="https://errer.me/blog/images/135645420.jpg"
+            <img
+              src="/images/135645420.jpg"
               height={144}
               width={144}
               className={utilStyles.borderCircle}
@@ -39,9 +37,8 @@ export default function Layout({children, home=false}) {
             <>
               <Link href="/">
                 <a>
-                  <Image
-                    priority
-                    src="https://errer.me/blog/images/135645420.jpg"
+                  <img
+                    src="/images/135645420.jpg"
                     width={108}
                     height={108}
                     className={utilStyles.borderCircle}
