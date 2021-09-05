@@ -6,6 +6,9 @@ const nextConfig = {
   images: {
     loader: "imgix",
     path: "/blog",
+  },
+  experimental: {
+    esmExternals: true
   }
 }
 
