@@ -3,10 +3,6 @@
  */
 const nextConfig = {
   basePath: '/blog',
-  images: {
-    loader: "imgix",
-    path: "/blog",
-  },
   experimental: {
     esmExternals: true
   }
