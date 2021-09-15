@@ -3,23 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "be": "next build && next export"
   },
   "dependencies": {
-    "date-fns": "^2.23.0",
     "github-markdown-css": "^4.0.0",
     "graphql": "^15.5.2",
     "graphql-request": "^3.5.0",
-    "gray-matter": "^4.0.3",
     "next": "^11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "remark": "^13.0.0",
-    "remark-html": "^13.0.1"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

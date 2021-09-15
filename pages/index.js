@@ -1,41 +1,53 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import { getMDPosts } from '../lib/posts';
 import Link from 'next/link';
-import Date from '../components/date';
+import styles from '../styles/layout.module.css';
 
-export default function Home({ allPostsData }) {
+export default function Home({ postsData }) {
   return (
-    <Layout home>
+    <div className={styles.container}>
       <Head>
-        <title>{siteTitle}</title>
+        <link rel="icon" href="/blog/favicon.ico" />
+        <meta name="description" content="JunQu Blog is a blog that helps do/achieve." />
+        <meta name="og:title" content="Blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <title>JunQu Blog</title>
       </Head>
-      <section className={`${utilStyles.headingMd}  ${utilStyles.padding1px}`}>
-        <h2>Blog</h2>
+      <header className={styles.header}>
+        <img
+          src="/blog/images/135645420.jpg"
+          height={144}
+          width={144}
+          className={utilStyles.borderCircle}
+          alt="avatar"
+        />
+      </header>
+      <main>
+        <h1>Posts List</h1>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, title, date }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
+          {postsData.map((post) => (
+            <li key={post.id} className={utilStyles.listItem}>
+              <Link href={`/${post.urlPath}`}>
+                <a>{post.title}</a>
               </Link>
               <br />
-              {id}
-              <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <time dateTime={post.updatedAt}>{new Date(post.updatedAt).toDateString()}</time>
               </small>
             </li>
           ))}
         </ul>
-      </section>
-    </Layout>
+      </main>
+    </div>
   );
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const postsData = await getMDPosts();
   return {
-    props: { allPostsData },
+    props: {
+      postsData,
+    },
   };
 }
