@@ -19,6 +19,12 @@ jobs:
           npm run build
           npm run export
           touch ./out/.nojekyll
+        env:
+          AuthorizationToken: ${{ secrets.AUTHORIZATIONTOKEN}}
+          RepositoryOwner: JunQu
+          RepositoryName: blog
+          PageSize: 100
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
