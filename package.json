@@ -1,6 +1,6 @@
 {
   "name": "learn-starter",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "dev": "next dev -p 4000",
@@ -11,18 +11,18 @@
     "be": "next build && next export"
   },
   "dependencies": {
-    "github-markdown-css": "^4.0.0",
-    "graphql": "^15.5.2",
-    "graphql-request": "^3.5.0",
-    "next": "^11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "github-markdown-css": "^5.1.0",
+    "graphql": "^16.3.0",
+    "graphql-request": "^4.2.0",
+    "next": "^12.1.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.2",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "prettier": "^2.3.2"
+    "eslint": "^8.12.0",
+    "eslint-config-next": "^12.1.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.1"
   }
 }
