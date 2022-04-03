@@ -3,8 +3,8 @@
  */
 const nextConfig = {
   basePath: '/blog',
-  experimental: {
-    esmExternals: true
+  images: {
+    loader: 'custom'
   }
 }
 

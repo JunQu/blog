@@ -3,6 +3,7 @@ import utilStyles from '../styles/utils.module.css';
 import { getMDPosts } from '../lib/posts';
 import Link from 'next/link';
 import styles from '../styles/layout.module.css';
+import { Image } from '../components/Image'
 
 export default function Home({ postsData }) {
   return (
@@ -15,7 +16,7 @@ export default function Home({ postsData }) {
         <title>JunQu Blog</title>
       </Head>
       <header className={styles.header}>
-        <img
+        <Image
           src="/blog/images/135645420.jpg"
           height={144}
           width={144}
