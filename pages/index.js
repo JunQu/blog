@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
-import { getMDPosts } from '../lib/posts';
-import Link from 'next/link';
-import styles from '../styles/layout.module.css';
+import Head from 'next/head'
+import utilStyles from '../styles/utils.module.css'
+import { getMDPosts } from '../lib/posts'
+import Link from 'next/link'
+import styles from '../styles/layout.module.css'
 import { Image } from '../components/Image'
 
 export default function Home({ postsData }) {
@@ -41,14 +41,14 @@ export default function Home({ postsData }) {
         </ul>
       </main>
     </div>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const postsData = await getMDPosts();
+  const postsData = await getMDPosts()
   return {
     props: {
       postsData,
     },
-  };
+  }
 }

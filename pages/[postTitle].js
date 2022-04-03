@@ -1,7 +1,7 @@
-import 'github-markdown-css/github-markdown.css';
-import Link from 'next/link';
-import utilStyles from '../styles/utils.module.css';
-import { getMDAll, getMDContent } from '../lib/posts';
+import 'github-markdown-css/github-markdown.css'
+import Link from 'next/link'
+import utilStyles from '../styles/utils.module.css'
+import { getMDAll, getMDContent } from '../lib/posts'
 
 export default function Post({ html }) {
   return (
@@ -19,22 +19,22 @@ export default function Post({ html }) {
         </section>
       </main>
     </>
-  );
+  )
 }
 
 export async function getStaticPaths() {
-  const paths = await getMDAll();
+  const paths = await getMDAll()
   return {
     paths,
     fallback: false,
-  };
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const html = await getMDContent(params.postTitle);
+  const html = await getMDContent(params.postTitle)
   return {
     props: {
       html,
     },
-  };
+  }
 }

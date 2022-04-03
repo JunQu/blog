@@ -1,4 +1,4 @@
-import { gql } from 'graphql-request';
+import { gql } from 'graphql-request'
 
 export const DiscussionsQuery = gql`
   query GetRepository($orderBy: DiscussionOrder, $pageSize: Int, $repositoryOwner: String!, $repositoryName: String!) {
@@ -73,4 +73,4 @@ export const DiscussionsQuery = gql`
       resetAt
     }
   }
-`;
+`
