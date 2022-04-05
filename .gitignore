@@ -34,7 +34,6 @@ lerna-debug.log*
 
 ./out
 .idea
-/schema.graphql
 /.env
 
 # Diagnostic reports (https://nodejs.org/api/report.html)

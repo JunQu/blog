@@ -1,12 +1,13 @@
 {
-  "name": "Untitled GraphQL Schema",
+  "name": "Github GraphQL Schema configuration",
   "schemaPath": "schema.graphql",
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
+        "comments-for-schema-graphql-file": "generate a schema from the Github API",
         "url": "https://api.github.com/graphql",
         "headers": {
-          "Authorization": "bearer Your_Token"
+          "Authorization": "bearer <token>"
         },
         "introspect": false
       }
