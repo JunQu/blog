@@ -4,12 +4,16 @@ import { getMDPosts } from '../lib/posts'
 import Link from 'next/link'
 import styles from '../styles/layout.module.css'
 import { Image } from '../components/Image'
+import { useRouter } from 'next/router'
 
 export default function Home({ postsData }) {
+  const {basePath} = useRouter()
+
+  console.log('router:',basePath)
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/blog/favicon.ico" />
+        <link rel="icon" href={`${basePath}/favicon.ico`} />
         <meta name="description" content="JunQu Blog is a blog that helps do/achieve." />
         <meta name="og:title" content="Blog" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -17,7 +21,7 @@ export default function Home({ postsData }) {
       </Head>
       <header className={styles.header}>
         <Image
-          src="/blog/images/135645420.jpg"
+          src={`${basePath}/images/profile.jpg`}
           height={144}
           width={144}
           className={utilStyles.borderCircle}
