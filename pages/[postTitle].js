@@ -5,7 +5,7 @@ import { getMDAll, getMDContent } from '../lib/posts'
 
 export default function Post({ html }) {
   return (
-    <>
+    <div>
       <header>
         <div className={utilStyles.backLink}>
           <Link href="/">
@@ -15,10 +15,10 @@ export default function Post({ html }) {
       </header>
       <main className={utilStyles.articleContainer}>
         <section className={utilStyles.articleContent}>
-          <article className={utilStyles.markdownBody} dangerouslySetInnerHTML={{ __html: html }} />
+          <article className="markdown-body" dangerouslySetInnerHTML={{ __html: html }} />
         </section>
       </main>
-    </>
+    </div>
   )
 }
 

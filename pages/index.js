@@ -9,7 +9,6 @@ import { useRouter } from 'next/router'
 export default function Home({ postsData }) {
   const {basePath} = useRouter()
 
-  console.log('router:',basePath)
   return (
     <div className={styles.container}>
       <Head>

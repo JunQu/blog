@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request'
 
-export const DiscussionsQuery = gql`
+export const DiscussionsListQuery = gql`
   query GetRepository($orderBy: DiscussionOrder, $pageSize: Int, $repositoryOwner: String!, $repositoryName: String!) {
     repository(owner: $repositoryOwner, name: $repositoryName) {
       id
@@ -8,38 +8,18 @@ export const DiscussionsQuery = gql`
       discussions(first: $pageSize, orderBy: $orderBy) {
         nodes {
           id
+          number
           author {
             url
             login
             avatarUrl
           }
-          body
-          bodyHTML
-          bodyText
           category {
             id
             name
             emoji
             description
           }
-          comments(first: 3) {
-            nodes {
-              author {
-                avatarUrl
-                login
-                resourcePath
-                url
-              }
-              bodyHTML
-              bodyText
-              publishedAt
-              deletedAt
-              updatedAt
-              url
-              upvoteCount
-            }
-          }
-          createdAt
           labels(first: 6) {
             nodes {
               id
@@ -47,15 +27,14 @@ export const DiscussionsQuery = gql`
               color
             }
           }
+          createdAt
+          updatedAt
           lastEditedAt
-          number
           publishedAt
           resourcePath
           title
-          updatedAt
           upvoteCount
           url
-          viewerCanDelete
         }
         pageInfo {
           endCursor
